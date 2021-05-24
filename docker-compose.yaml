@@ -1,0 +1,26 @@
+services:
+    ros_cudagl:
+        build:
+            args:
+                ROS_TAG: ${ROS_TAG}
+                CUDAGL_TAG: ${CUDAGL_TAG}
+            context: .
+            dockerfile: Dockerfile
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - capabilities:
+                            - gpu
+        env_file:
+            - .env
+        environment:
+            - "DISPLAY=${DISPLAY}"
+            # fix some QT bugs
+            - "QT_X11_NO_MITSHM=1"
+        image: ros_cudagl:${ROS_TAG}_${CUDAGL_TAG}
+        # For "Failed to initialize NVML: Unknown Error"
+        privileged: true
+        volumes:
+            # share your x11 socket and permissions to the container
+            - /tmp/.X11-unix:/tmp/.X11-unix:rw
