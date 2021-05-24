@@ -25,3 +25,9 @@ tags provided by [osrf/ros](https://hub.docker.com/r/osrf/ros/tags) and
 ```bash
 docker-compose build
 ```
+
+## Quickstart
+```bash
+docker-compose build && docker-compose run -d --name ros_cudagl_container ros_cudagl
+docker exec -it ros_cudagl_container /bin/bash
+```
