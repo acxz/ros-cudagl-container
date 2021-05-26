@@ -31,3 +31,12 @@ docker-compose build
 docker-compose build && docker-compose run -d --name ros_cudagl_container ros_cudagl
 docker exec -it ros_cudagl_container /bin/bash
 ```
+
+## Push to Docker Hub
+
+Specify the ros and cudagl combination tags to push images to docker hub in the
+`hub_push.sh` script and run as follows.
+
+```bash
+sh hub_push.sh
+```
