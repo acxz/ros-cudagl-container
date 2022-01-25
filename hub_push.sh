@@ -10,12 +10,12 @@ for cudagl_tag in "${cudagl_tags[@]}"; do
     echo "ROS_TAG=${ros_tag}" > .env
     echo "CUDAGL_TAG=${cudagl_tag}" >> .env
 
-    docker-compose build
+    podman-compose build
 
-    docker tag ros_cudagl:${ros_tag}_${cudagl_tag} \
-        acxz/ros-cudagl:${ros_tag}_${cudagl_tag}
+    podman tag ros_cudagl:${ros_tag}_${cudagl_tag} \
+        docker.io/acxz/ros-cudagl:${ros_tag}_${cudagl_tag}
 
-    docker push acxz/ros-cudagl:${ros_tag}_${cudagl_tag}
+    podman push docker.io/acxz/ros-cudagl:${ros_tag}_${cudagl_tag}
 
 done
 done

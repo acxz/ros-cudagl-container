@@ -2,10 +2,10 @@ ARG ROS_TAG
 ARG CUDAGL_TAG
 
 # obtain ros image
-FROM osrf/ros:${ROS_TAG} AS ros
+FROM docker.io/osrf/ros:${ROS_TAG} AS ros
 
 # base image off of cudagl
-FROM nvidia/cudagl:${CUDAGL_TAG}
+FROM docker.io/nvidia/cudagl:${CUDAGL_TAG}
 
 # copy the entire ros image into the cudagl image
 COPY --from=ros / /

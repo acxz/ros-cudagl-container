@@ -6,14 +6,14 @@ A repository for creating OCI containers with ROS and CUDA/OpenGL.
 Example:
 
 ```bash
-docker pull acxz/ros-cudagl:melodic-desktop-full-bionic_10.2-devel-ubuntu18.04
+podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_10.2-devel-ubuntu18.04
 ```
 
 ## Build your own images
 
 ### Dependencies
 
-- [docker-compose](https://docs.docker.com/compose/)
+- [podman-compose](https://github.com/containers/podman-compose)
 
 ### `.env` file
 
@@ -23,13 +23,13 @@ tags provided by [osrf/ros](https://hub.docker.com/r/osrf/ros/tags) and
 
 ### Create image
 ```bash
-docker-compose build
+podman-compose build
 ```
 
 ## Quickstart
 ```bash
-docker-compose build && docker-compose run -d --name ros_cudagl_container ros_cudagl
-docker exec -it ros_cudagl_container /bin/bash
+podman-compose build && podman-compose run -d --name ros_cudagl_container ros_cudagl
+podman exec -it ros_cudagl_container /bin/bash
 ```
 
 ## Push to Docker Hub
