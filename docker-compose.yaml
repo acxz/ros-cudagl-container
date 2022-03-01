@@ -3,7 +3,8 @@ services:
         build:
             args:
                 ROS_TAG: ${ROS_TAG}
-                CUDAGL_TAG: ${CUDAGL_TAG}
+                OPENGL_TAG: ${OPENGL_TAG}
+                CUDA_TAG: ${CUDA_TAG}
             context: .
             dockerfile: Dockerfile
         deploy:
@@ -17,7 +18,7 @@ services:
         environment:
             - "DISPLAY=${DISPLAY}"
             - "QT_X11_NO_MITSHM=1"
-        image: ros_cudagl:${ROS_TAG}_${CUDAGL_TAG}
+        image: ros_cudagl:${ROS_TAG}_${CUDA_TAG}
         # For "Failed to initialize NVML: Unknown Error"
         privileged: true
         volumes:

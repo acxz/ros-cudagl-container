@@ -17,9 +17,10 @@ podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_10.2-devel-ubu
 
 ### `.env` file
 
-Make sure to change the `ROS_TAG` and `CUDAGL_TAG` with the appropriate image
-tags provided by [osrf/ros](https://hub.docker.com/r/osrf/ros/tags) and
-[nvidia/cudagl](https://hub.docker.com/r/nvidia/cudagl/tags).
+Make sure to change the `ROS_TAG`, `OPENGL_TAG`, and `CUDA_TAG` with the appropriate image
+tags provided by [osrf/ros](https://hub.docker.com/r/osrf/ros/tags),
+[nvidia/opengl](https://hub.docker.com/r/nvidia/opengl/tags), and
+[nvidia/cuda](https://hub.docker.com/r/nvidia/cuda/tags).
 
 ### Create image
 ```bash

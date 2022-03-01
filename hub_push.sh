@@ -1,21 +1,25 @@
 # A script to automatically push ros-cudagl images to docker hub
 
 declare -a ros_tags=("melodic-desktop-full-bionic")
-declare -a cudagl_tags=("11.4.2-devel-ubuntu18.04")
+declare -a opengl_tags=("1.2-glvnd-devel-ubuntu18.04")
+declare -a cuda_tags=("11.6.0-devel-ubuntu18.04")
 
 for ros_tag in "${ros_tags[@]}"; do
-for cudagl_tag in "${cudagl_tags[@]}"; do
+for opengl_tag in "${opengl_tags[@]}"; do
+for cuda_tag in "${cuda_tags[@]}"; do
 
     touch .env
     echo "ROS_TAG=${ros_tag}" > .env
-    echo "CUDAGL_TAG=${cudagl_tag}" >> .env
+    echo "OPENGL_TAG=${opengl_tag}" >> .env
+    echo "CUDA_TAG=${cuda_tag}" >> .env
 
     podman-compose build
 
-    podman tag ros_cudagl:${ros_tag}_${cudagl_tag} \
-        docker.io/acxz/ros-cudagl:${ros_tag}_${cudagl_tag}
+    podman tag ros_cudagl:${ros_tag}_${cuda_tag} \
+        docker.io/acxz/ros-cudagl:${ros_tag}_${cuda_tag}
 
-    podman push docker.io/acxz/ros-cudagl:${ros_tag}_${cudagl_tag}
+    podman push docker.io/acxz/ros-cudagl:${ros_tag}_${cuda_tag}
 
+done
 done
 done
