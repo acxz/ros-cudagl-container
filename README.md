@@ -6,7 +6,7 @@ A repository for creating OCI containers with ROS and CUDA/OpenGL.
 Example:
 
 ```bash
-podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_10.2-devel-ubuntu18.04
+podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_11.4.2-devel-ubuntu18.04
 ```
 
 ## Build your own images
@@ -36,6 +36,8 @@ podman exec -it ros_cudagl_container /bin/bash
 
 Specify the ros and cudagl combination tags to push images to docker hub in the
 `hub_push.sh` script and run as follows.
+
+Make sure you are logged in via: `podman login docker.io`
 
 ```bash
 sh hub_push.sh
