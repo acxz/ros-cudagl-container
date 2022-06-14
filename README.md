@@ -14,6 +14,7 @@ podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_11.4.2-devel-u
 ### Dependencies
 
 - [podman-compose](https://github.com/containers/podman-compose)
+- [containernetworking/plugins](https://github.com/containernetworking/plugins)
 
 ### `.env` file
 
