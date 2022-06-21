@@ -1,7 +1,7 @@
 # A script to automatically push ros-cudagl images to docker hub
 
 declare -a ros_tags=("melodic-desktop-full-bionic")
-declare -a cudagl_tags=("11.4.1-devel-ubuntu18.04" "11.4.2-devel-ubuntu18.04")
+declare -a cudagl_tags=("11.4.2-devel-ubuntu18.04")
 
 for ros_tag in "${ros_tags[@]}"; do
 for cudagl_tag in "${cudagl_tags[@]}"; do
