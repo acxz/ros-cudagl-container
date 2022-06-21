@@ -10,8 +10,7 @@ services:
             resources:
                 reservations:
                     devices:
-                        - capabilities:
-                            - gpu
+                        - capabilities: [gpu]
         env_file:
             - .env
         environment:
