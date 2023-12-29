@@ -6,7 +6,7 @@ A repository for creating OCI containers with ROS and CUDA/OpenGL.
 Example:
 
 ```bash
-podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_11.4.2-devel-ubuntu18.04
+podman pull docker.io/acxz/ros-cudagl:noetic-desktop-full_11.4.2-devel-ubuntu20.04
 ```
 
 ## Build your own images
@@ -15,6 +15,7 @@ podman pull docker.io/acxz/ros-cudagl:melodic-desktop-full-bionic_11.4.2-devel-u
 
 - [podman-compose](https://github.com/containers/podman-compose)
 - [containernetworking/plugins](https://github.com/containernetworking/plugins)
+- [containers/aardvark-dns](https://github.com/containers/aardvark-dns)
 
 ### `.env` file
 

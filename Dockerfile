@@ -11,4 +11,4 @@ FROM docker.io/nvidia/cudagl:${CUDAGL_TAG}
 COPY --from=ros / /
 
 # add key from nvidia as it gets overwritten by the ros image
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
